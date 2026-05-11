@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functional Calculator</title>
+    <link rel="stylesheet" href="css/style(1).css">
+
+</head>
+
+<body>
+    <div class="outer_main">
+        <div class="inner_left">
+            <div class="calcu">
+                <div class="heading">
+                    <h1>BMI Calculator</h1>
+                </div>
+                <div class="image">
+                    <img src="image/boy.png" alt="">
+                    <img src="image/girl.png" alt="">
+                </div>
+                <div class="gender-switch">
+                    <input type="radio" id="boy" name="gender" checked>
+                    <label for="boy">Male</label>
+                    <input type="radio" id="girl" name="gender" checked>
+                    <label for="girl">Female</label>
+                    <div class="slider"></div>
+                </div>
+
+                <div class="inputs">
+                    <form action="" id="calculation-form">
+                        <div class="input_field">
+                            <label for="age" id="age-label">Age</label>
+                            <input type="number" id="age" placeholder=" Age in years">
+                        </div>
+                        <div class="input_field">
+                            <label for="weight" id="weight-label">Weight</label>
+                            <input type="number" id="weight" placeholder=" Weight in kg">
+                        </div>
+                        <div class="input_field">
+                            <label for="height" id="height-label">Height</label>
+                            <input type="number" id="height" placeholder=" Height in Cm">
+                        </div>
+                        <div class="input_field">
+                            <label for="activity" id="activity-label">Activity Level</label>
+                            <select id="activity">
+                                <option value="sedentary">Sedentary</option>
+                                <option value="light">Lightly Active</option>
+                                <option value="moderate">Moderately Active</option>
+                                <option value="active">Active</option>
+                                <option value="veryActive">Very Active</option>
+                            </select>
+                        </div>
+                        <div class="result" id="result">
+                            <div class="bmi">
+                                <p class="bmi-inner">
+                                    
+                                </p>
+                            </div>
+                            <!-- <h2>Result</h2> -->
+                        </div>
+
+                        <button class="button" type="button" id="calculate" onclick="calculateBMR()">Calculate</button>
+                    </form>
+                </div>
+
+
+            </div>
+        </div>
+        <div class="inner_right">
+            <div class="calcu calcu_in">
+                <div class="heading rheading">
+                    <h1> Interest Calculator</h1>
+                </div>
+                <div class="image-1">
+                    <img src="image/calcu.jpg" alt="">
+                </div>
+                <div class="gender-switch interest-switch">
+                    <input type="radio" id="simple" name="interest" checked>
+                    <label for="simple">Simple Interest</label>
+                    <input type="radio" id="compound" name="interest">
+                    <label for="compound">Compound Interest</label >
+                    <div class="slider"></div>
+
+                </div>
+                <div class="inputs">
+                    <form action="">
+                        <div class="input_field">
+                            <label for="principal" id="principal-label">Principal</label>
+                            <input type="text" id="principal" placeholder="Enter principal amount">
+                        </div>
+                        <div class="input_field">
+                            <label for="interest" id="interest-label">Interest Rate</label>
+                            <input type="text" id="interest" placeholder="Enter interest rate (e.g., 5 for 5%)">
+                        </div>
+                        <div class="input_field">
+                            <label for="time" id="time-label">Time</label>
+                            <input type="text" id="time" placeholder="Enter time in years">
+                        </div>
+                        <div class="result" id="calculation-result">
+                            <!-- <h2>Result</h2> -->
+                        </div>
+
+                        <button class="button" type="button" id="evaluate"
+                            onclick="evaluateExpression()">Evaluate</button>
+                    </form>
+
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</body>
+<script src="js/script.js"></script>
+
+</html>

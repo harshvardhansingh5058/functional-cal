@@ -1,0 +1,254 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+body{
+    background-color: #697565;
+
+}
+.outer_main{
+    display: flex;
+    justify-content: center;
+    /* margin: 20px auto; */
+    width: 100%;
+
+}
+.inner_left{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 50%;
+    /* border: #f9f9f9 4px solid; */
+    border-radius: 12px;
+}
+.inner_right{
+    /* border: #f9f9f9 4px solid; */
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 50%;
+}
+
+.calcu{
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */;
+    position: relative;
+    margin: 10px 30px ;
+    /* display: flex; */
+    /* height: 400px; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    width: 500px;
+    border-radius: 12px;
+    background-color: #f9f9f9;
+    padding-bottom: 50px;
+    border: 4px solid #17370d;
+}
+.calcu_in{
+    padding: 40px 0px ;
+}
+.heading{
+    text-align: center;
+    padding: 20px 0px;
+    color: #17370d;
+}
+.rheading{
+    padding: 0px 0px 35px 0px ;
+}
+.image{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+.image img{
+    border-radius: 50%;  
+    border: 2px solid #17370d;
+
+    width: 20%;
+}
+.image-1{
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+}
+.image-1 img{
+    width: 40%;
+    border-radius: 12px;
+    border: 2px solid #17370d;
+}
+
+
+.image-1 img:hover{
+    transform: scale(1.05);
+    transition: 0.3s;
+
+}
+.gender-switch{
+    width: 280px;
+    height: 50px;
+    background-color: #697565;
+    border-radius: 30px;
+    border: 3px solid #17370d;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    position: relative;
+    overflow: hidden;
+
+    margin: 15px auto 0;
+}
+
+.gender-switch input{
+    display: none;
+}
+
+.gender-switch label{
+    color: white;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 900;
+}
+
+.slider{
+    width: 51%;
+    height: 100%;
+    background-color: #1B211A;
+    border-radius: 30px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: 0.3s;
+}
+
+#boy:checked ~ .slider{
+    left: 0;
+}
+
+#girl:checked ~ .slider{
+    left: 50%;
+}
+
+#boy:checked + label,
+#girl:checked + label{
+    color: white;
+}
+.interest-switch{
+    margin: 20px auto 0;
+}
+.interest-switch label{
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#simple:checked ~ .slider{
+    left: 0;
+}
+
+#compound:checked ~ .slider{
+    left: 50%;
+}
+.inputs{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    /* margin-top: 70px; */
+    /* border: 1px solid black; */
+}
+
+.inputs form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 20px;
+}
+.input_field{
+
+    /* width: 100%; */
+    background-color: white;
+    border: 2px solid #17370d;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 12px;
+    display: flex;
+    /* flex-direction: column; */
+    gap: 10px;
+}
+.input_field label{
+    font-size: 18px;
+    font-weight: 800;
+    color: #17370d;
+}
+.input_field input{
+    flex: 1;
+    border: none;
+}
+
+.input_field select{
+    flex: 1;
+    border: none;
+    font-size: 16px;
+}
+select{
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 18px;
+    color: #17370d;
+    padding: 0 15px;
+    cursor: pointer;
+}
+
+.result{
+   min-width: 200px;
+    display: flex;
+    justify-content: center;
+    border: 1px solid #697565;
+    background-color: white;
+    color: black;
+    width: 100px;
+    text-align: center;
+    align-items: center;
+    padding: 18px 120px;
+    border-radius: 12px;
+    margin: 10px auto;
+    font-size: 20px;
+    font-weight: 700;
+    white-space: pre-line;
+}
+.button{
+    width: 40%;
+    margin: auto;
+    background-color: #1B211A;
+    color: white;
+    border: none;
+    padding: 25px 2px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+input{
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+    outline: none;
+}

@@ -5,9 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Functional Calculator</title>
-    <link rel="stylesheet" href="css/style(1).css">
-    <link rel="stylesheet" href="css/res.css">
-
+    <link rel="stylesheet" href="css/style(2).css">
+    <link rel="stylesheet" href="css/res2.css">
 </head>
 
 <body>
@@ -15,7 +14,8 @@
         <div class="inner_left">
             <div class="calcu">
                 <div class="heading">
-                    <h1>BMI Calculator</h1>
+                    <h1>BMI and Calories Calculator
+                    </h1>
                 </div>
                 <div class="image">
                     <img src="image/boy.png" alt="">
@@ -24,7 +24,7 @@
                 <div class="gender-switch">
                     <input type="radio" id="boy" name="gender" checked>
                     <label for="boy">Male</label>
-                    <input type="radio" id="girl" name="gender" checked>
+                    <input type="radio" id="girl" name="gender">
                     <label for="girl">Female</label>
                     <div class="slider"></div>
                 </div>
@@ -56,23 +56,21 @@
                         <div class="result" id="result">
                             <div class="bmi">
                                 <p class="bmi-inner">
-                                    
+
                                 </p>
                             </div>
-                            <!-- <h2>Result</h2> -->
                         </div>
 
                         <button class="button" type="button" id="calculate" onclick="calculateBMR()">Calculate</button>
                     </form>
                 </div>
 
-
             </div>
         </div>
         <div class="inner_right">
             <div class="calcu calcu_in">
                 <div class="heading rheading">
-                    <h1> Interest Calculator</h1>
+                    <h1>Interest Calculator</h1>
                 </div>
                 <div class="image-1">
                     <img src="image/calcu.jpg" alt="">
@@ -81,9 +79,8 @@
                     <input type="radio" id="simple" name="interest" checked>
                     <label for="simple">Simple Interest</label>
                     <input type="radio" id="compound" name="interest">
-                    <label for="compound">Compound Interest</label >
+                    <label for="compound">Compound Interest</label>
                     <div class="slider"></div>
-
                 </div>
                 <div class="inputs">
                     <form action="">
@@ -100,20 +97,16 @@
                             <input type="text" id="time" placeholder="Enter time in years">
                         </div>
                         <div class="result" id="calculation-result">
-                            <!-- <h2>Result</h2> -->
                         </div>
 
                         <button class="button" type="button" id="evaluate"
                             onclick="evaluateExpression()">Evaluate</button>
                     </form>
-
                 </div>
             </div>
-
-
         </div>
     </div>
+    <script src="js/script.js"></script>
 </body>
-<script src="js/script.js"></script>
 
 </html>

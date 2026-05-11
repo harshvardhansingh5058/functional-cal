@@ -1,0 +1,133 @@
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    .outer_main {
+        gap: 16px;
+    }
+    
+    .calcu {
+        padding: 20px;
+    }
+}
+
+@media only screen and (min-width: 427px) and (max-width: 768px) {
+    .outer_main {
+        flex-direction: column;
+    }
+    
+    .inner_left,
+    .inner_right {
+        flex-basis: 100%;
+    }
+    
+    .calcu {
+        padding: 20px;
+    }
+}
+
+@media only screen and (min-width: 377px) and (max-width: 426px) {
+    .outer_main {
+        flex-direction: column;
+    }
+    
+    .inner_left,
+    .inner_right {
+        flex-basis: 100%;
+    }
+    
+    .heading h1 {
+        font-size: 18px;
+    }
+    
+    .input_field {
+        padding: 8px 12px;
+    }
+}
+
+@media only screen and (min-width: 322px) and (max-width: 376px) {
+    .outer_main {
+        flex-direction: column;
+    }
+    
+    .inner_left,
+    .inner_right {
+        flex-basis: 100%;
+    }
+
+    .input_field input {
+        width: 100%;
+    }
+    
+    .heading h1 {
+        font-size: 18px;
+    }
+    
+    body {
+        padding: 20px 10px;
+    }
+    
+    .calcu {
+        padding: 16px;
+    }
+}
+
+@media only screen and (max-width: 321px) {
+
+    * {
+        font-size: 14px;
+    }
+
+    .outer_main {
+        flex-direction: column;
+        gap: 16px;
+    }
+    
+    .inner_left,
+    .inner_right {
+        flex-basis: 100%;
+    }
+
+    .input_field input {
+        width: 100%;
+    }
+
+    .interest-switch {
+        display: flex;
+        gap: 10px;
+    }
+
+    .input_field {
+        width: 100%;
+        padding: 8px 10px;
+    }
+
+    .input_field label {
+        min-width: 70px;
+        font-size: 12px;
+    }
+
+    .input_field input {
+        width: 100%;
+        border: none;
+        outline: none;
+        font-size: 14px;
+    }
+
+    .input_field input::placeholder {
+        font-size: 12px;
+    }
+    
+    .heading h1 {
+        font-size: 16px;
+    }
+    
+    .image img {
+        width: 22%;
+    }
+    
+    .calcu {
+        padding: 12px;
+    }
+    
+    body {
+        padding: 15px 10px;
+    }
+}

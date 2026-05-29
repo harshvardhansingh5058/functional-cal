@@ -2,111 +2,179 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Functional Calculator</title>
-    <link rel="stylesheet" href="css/style(2).css">
-    <link rel="stylesheet" href="css/res2.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculators</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/style(2).css">
+  <link rel="stylesheet" href="css/res.css">
 </head>
 
 <body>
-    <div class="outer_main">
-        <div class="inner_left">
-            <div class="calcu">
-                <div class="heading">
-                    <h1>BMI and Calories Calculator
-                    </h1>
-                </div>
-                <div class="image">
-                    <img src="image/boy.png" alt="">
-                    <img src="image/girl.png" alt="">
-                </div>
-                <div class="gender-switch">
-                    <input type="radio" id="boy" name="gender" checked>
-                    <label for="boy">Male</label>
-                    <input type="radio" id="girl" name="gender">
-                    <label for="girl">Female</label>
-                    <div class="slider"></div>
-                </div>
 
-                <div class="inputs">
-                    <form action="" id="calculation-form">
-                        <div class="input_field">
-                            <label for="age" id="age-label">Age</label>
-                            <input type="number" id="age" placeholder=" Age in years">
-                        </div>
-                        <div class="input_field">
-                            <label for="weight" id="weight-label">Weight</label>
-                            <input type="number" id="weight" placeholder=" Weight in kg">
-                        </div>
-                        <div class="input_field">
-                            <label for="height" id="height-label">Height</label>
-                            <input type="number" id="height" placeholder=" Height in Cm">
-                        </div>
-                        <div class="input_field">
-                            <label for="activity" id="activity-label">Activity Level</label>
-                            <select id="activity">
-                                <option value="sedentary">Sedentary</option>
-                                <option value="light">Lightly Active</option>
-                                <option value="moderate">Moderately Active</option>
-                                <option value="active">Active</option>
-                                <option value="veryActive">Very Active</option>
-                            </select>
-                        </div>
-                        <div class="result" id="result">
-                            <div class="bmi">
-                                <p class="bmi-inner">
+  <div class="grid">
 
-                                </p>
-                            </div>
-                        </div>
+    <!-- ===== BMI CARD ===== -->
+    <div class="card card-bmi">
+      <div class="card-title">
+        <span class="title-dot dot-cyan"></span>
+        BMI &amp; Calories
+      </div>
 
-                        <button class="button" type="button" id="calculate" onclick="calculateBMR()">Calculate</button>
-                    </form>
-                </div>
-
-            </div>
+      <div class="avatars">
+        <div class="avatar-wrap active" id="male-avatar" onclick="selectGender('male')">
+          <div class="avatar-circle">🧑</div>
+          <span class="avatar-label">Male</span>
         </div>
-        <div class="inner_right">
-            <div class="calcu calcu_in">
-                <div class="heading rheading">
-                    <h1>Interest Calculator</h1>
-                </div>
-                <div class="image-1">
-                    <img src="image/calcu.jpg" alt="">
-                </div>
-                <div class="gender-switch interest-switch">
-                    <input type="radio" id="simple" name="interest" checked>
-                    <label for="simple">Simple Interest</label>
-                    <input type="radio" id="compound" name="interest">
-                    <label for="compound">Compound Interest</label>
-                    <div class="slider"></div>
-                </div>
-                <div class="inputs">
-                    <form action="">
-                        <div class="input_field">
-                            <label for="principal" id="principal-label">Principal</label>
-                            <input type="text" id="principal" placeholder="Enter principal amount">
-                        </div>
-                        <div class="input_field">
-                            <label for="interest" id="interest-label">Interest Rate</label>
-                            <input type="text" id="interest" placeholder="Enter interest rate (e.g., 5 for 5%)">
-                        </div>
-                        <div class="input_field">
-                            <label for="time" id="time-label">Time</label>
-                            <input type="text" id="time" placeholder="Enter time in years">
-                        </div>
-                        <div class="result" id="calculation-result">
-                        </div>
-
-                        <button class="button" type="button" id="evaluate"
-                            onclick="evaluateExpression()">Evaluate</button>
-                    </form>
-                </div>
-            </div>
+        <div class="avatar-wrap" id="female-avatar" onclick="selectGender('female')">
+          <div class="avatar-circle">👩</div>
+          <span class="avatar-label">Female</span>
         </div>
+      </div>
+
+      <div class="toggle-row">
+        <input type="radio" name="gender" id="boy" checked>
+        <label for="boy">Male</label>
+        <input type="radio" name="gender" id="girl">
+        <label for="girl">Female</label>
+        <div class="toggle-pill pill-cyan"></div>
+      </div>
+
+      <div class="fields">
+        <div class="field field-bmi">
+          <span class="field-icon">🎂</span>
+          <label for="age">Age</label>
+          <input type="number" id="age" placeholder="Years" min="1" max="120">
+        </div>
+        <div class="field field-bmi">
+          <span class="field-icon">⚖️</span>
+          <label for="weight">Weight</label>
+          <input type="number" id="weight" placeholder="Kilograms" min="1">
+        </div>
+        <div class="field field-bmi">
+          <span class="field-icon">📏</span>
+          <label for="height">Height</label>
+          <input type="number" id="height" placeholder="Centimeters" min="1">
+        </div>
+        <div class="field field-bmi">
+          <span class="field-icon">🏃</span>
+          <label for="activity">Activity</label>
+          <select id="activity">
+            <option value="1.2">Sedentary</option>
+            <option value="1.375">Lightly Active</option>
+            <option value="1.55">Moderately Active</option>
+            <option value="1.725">Active</option>
+            <option value="1.9">Very Active</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="spacer"></div>
+
+      <!-- id="bmi-result" — script.js yahi dhundta hai -->
+      <div class="result-box" id="bmi-result">
+        <span class="result-placeholder">Enter your details and calculate</span>
+        <div class="result-content">
+          <div class="result-main cyan" id="bmi-val">—</div>
+          <div class="result-sub">
+            <span class="result-tag" id="bmi-tag"></span>
+          </div>
+          <div class="result-sub" id="bmi-cal"></div>
+        </div>
+      </div>
+
+      <div class="spacer"></div>
+      <button class="btn btn-cyan" onclick="calcBMI()">Calculate BMI &amp; Calories</button>
     </div>
-    <script src="js/script.js"></script>
+
+    <!-- ===== INTEREST CARD ===== -->
+    <div class="card card-interest">
+      <div class="card-title">
+        <span class="title-dot dot-amber"></span>
+        Interest Calculator
+      </div>
+
+      <div class="calc-banner">
+        <div class="banner-visual">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
+        <span class="banner-label">GROWTH</span>
+      </div>
+
+      <div class="toggle-row">
+        <input type="radio" name="interest" id="simple" checked>
+        <label for="simple">Simple Interest</label>
+        <input type="radio" name="interest" id="compound">
+        <label for="compound">Compound Interest</label>
+        <div class="toggle-pill pill-amber"></div>
+      </div>
+
+      <div class="fields">
+        <div class="field field-amber">
+          <span class="field-icon">💰</span>
+          <label for="principal">Principal</label>
+          <input type="number" id="principal" placeholder="Amount (₹)" min="0">
+        </div>
+        <div class="field field-amber">
+          <span class="field-icon">📈</span>
+          <!-- id="rate" — script.js yahi dhundta hai (original mein 'interest' tha — FIX kiya) -->
+          <label for="rate">Rate</label>
+          <input type="number" id="rate" placeholder="% per year" min="0" step="0.01">
+        </div>
+        <div class="field field-amber">
+          <span class="field-icon">🗓️</span>
+          <label for="time">Time</label>
+          <input type="number" id="time" placeholder="Years" min="0" step="0.5">
+        </div>
+      </div>
+
+      <div class="spacer"></div>
+
+      <!-- id="int-result" — script.js yahi dhundta hai -->
+      <div class="result-box" id="int-result">
+        <span class="result-placeholder">Enter values and evaluate</span>
+        <div class="result-content">
+          <div class="result-main amber" id="int-total">—</div>
+          <div class="result-sub" id="int-type-label"></div>
+        </div>
+      </div>
+
+      <!-- Detail chips — visible class JS se lagta hai -->
+      <div class="interest-details" id="int-details">
+        <div class="detail-chip">
+          <div class="chip-label">Interest Earned</div>
+          <div class="chip-val amber" id="int-earned">—</div>
+        </div>
+        <div class="detail-chip">
+          <div class="chip-label">Total Amount</div>
+          <div class="chip-val" id="int-amount">—</div>
+        </div>
+        <div class="detail-chip">
+          <div class="chip-label">Principal</div>
+          <div class="chip-val" id="int-principal">—</div>
+        </div>
+        <div class="detail-chip">
+          <div class="chip-label">Rate × Time</div>
+          <div class="chip-val" id="int-rt">—</div>
+        </div>
+      </div>
+
+      <div class="spacer"></div>
+      <button class="btn btn-amber" onclick="calcInterest()">Evaluate</button>
+    </div>
+
+  </div>
+
+  <script src="js/script.js"></script>
 </body>
 
 </html>

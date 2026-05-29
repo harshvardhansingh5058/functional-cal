@@ -52,7 +52,7 @@ girlEl.addEventListener('change', () => selectGender('female'));
 
 
 //    BMI & CALORIES CALCULATOR --
- 
+
 function calcBMI() {
      const a = Number(ageEl.value);
      const w = Number(weightEl.value);
@@ -167,7 +167,14 @@ function calcInterest() {
      intEarned.textContent = fmt(interest);
      intAmount.textContent = fmt(total);
      intPrincipal.textContent = fmt(p);
-     intRt.textContent = (r * t).toFixed(2) + '%';
+     const rtLabel = document.getElementById('int-rt-label');
+     if (simpleEl.checked) {
+          if (rtLabel) rtLabel.textContent = 'Rate \u00d7 Time';
+          intRt.textContent = (r * t).toFixed(2) + '%';
+     } else {
+          if (rtLabel) rtLabel.textContent = 'Total Growth';
+          intRt.textContent = (((total / p) - 1) * 100).toFixed(2) + '%';
+     }
 
      intResultBox.classList.add('has-result');
      intDetails.classList.add('visible');
@@ -176,7 +183,7 @@ function calcInterest() {
 
 
 //    HELPERS --
-   
+
 // Smooth pulse on result reveal
 function pulse(el) {
      el.style.transition = 'transform 0.1s';
